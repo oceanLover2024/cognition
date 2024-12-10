@@ -45,74 +45,58 @@
     z-index: 2;
 }
 .box1{
-    top: 150px;
-    left:400px;
+    top: 150px; left: calc(50% - 160px);
 }
 .box2{
-    top: 150px;
-    left:480px;
+    top: 150px; left: calc(50% - 80px);
 }
 .box3{
-    top: 150px;
-    left:560px;
+    top: 150px; left: calc(50%);
 }
 .box4{
-    top: 150px;
-    left:640px;
+    top: 150px; left: calc(50% + 80px);
 }
 .box5{
-    top: 230px;
-    left:400px;
+    top: 230px; left: calc(50% - 160px);
 }
 .box6{
-    top: 230px;
-    left:480px;
+    top: 230px; left: calc(50% - 80px);
 }
 .box7{
-    top: 230px;
-    left:560px;
+    top: 230px; left: calc(50%);
 }
 .box8{
-    top: 230px;
-    left:640px;
+    top: 230px; left: calc(50% + 80px);
 }
 .box9{
-    top: 310px;
-    left:400px;
+    top: 310px; left: calc(50% - 160px);
 }
 .box10{
-    top: 310px;
-    left:480px;
+    top: 310px; left: calc(50% - 80px);
 }
 .box11{
-    top: 310px;
-    left:560px;
+    top: 310px; left: calc(50%);
 }
 .box12{
-    top: 310px;
-    left:640px;
+    top: 310px; left: calc(50% + 80px);
 }
 .box13{
-    top: 390px;
-    left:400px;
+    top: 390px; left: calc(50% - 160px);
 }
 .box14{
-    top: 390px;
-    left:480px;
+    top: 390px; left: calc(50% - 80px);
 }
 .box15{
-    top: 390px;
-    left:560px;
+    top: 390px; left: calc(50%);
 }
 .box16{
-    top: 390px;
-    left:640px;
-}
+    top: 390px; left: calc(50% + 80px);
+} 
 .img{
     width: 320px; height: 320px;
     position: absolute;
     top:150px;
-    left:400px;
+    left: calc(50% - 160px);
     z-index: 1; 
     display: none;                    
 }
