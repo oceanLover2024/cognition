@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>繽紛旋轉木馬</title>
+    <link rel="stylesheet" type = "text/css" href="horse.css">
+</head>
+<body>
+    <div id="combine">
+        <img onclick="home();" class="home" src="首頁.jpg">  
+        <div class="head">繽紛旋轉木馬</div>
+    </div>
+    <div class="main">
+        <div class="horsesBlock">
+            <img onclick= "horse1();" class="horse" src="horse/horse1.jpg"/>
+            <img onclick= "horse2();" class="horse" src="horse/horse2.jpg"/>
+            <img onclick= "horse3();" class="horse" src="horse/horse3.jpg"/>
+            <img onclick= "horse4();" class="horse" src="horse/horse4.jpg"/>
+        </div>
+        <div class="questions">
+            <div class="question task">任務將會出現在此</div>       
+        </div>
+        <div class="buttonsBlock">
+            <button class="buttonStyle" onclick="display1();">1</button>
+            <button class="buttonStyle" onclick="display2();">2</button>
+            <button class="buttonStyle" onclick="display3();">3</button>
+            <button class="buttonStyle" onclick="display4();">4</button>
+            <button class="buttonStyle" onclick="display5();">5</button>
+        </div>
+        <div class="boxesBlock">
+            <div id="box"  class="box" >
+                <div class="display1">
+                    <div class="word" style="color: black;">黃</div>
+                    <div class="word" style="color: green;">綠</div>
+                    <div class="word" style="color: orange">紅</div>
+                    <div class="word" style="color: pink;">橘</div>
+                    <div class="word" style="color: black;">藍</div>
+                    <div class="word" style="color: yellow;">黑</div>
+                    <div class="word" style="color: green;">白</div>
+                    <div class="word" style="color: rgb(232, 19, 19);">紫</div>
+                    <div class="word" style="color: blue;">綠</div>
+                    <div class="word" style="color: gray;">棕</div>
+                    <div class="word" style="color: white;">白</div>
+                </div>
+
+                <div class="display2" >
+                    <div class="word" style="color: pink;">白</div>
+                    <div class="word" style="color: black">棕</div>
+                    <div class="word" style="color: orange;">粉</div>
+                    <div class="word" style="color: rgb(232, 19, 19);">橘</div>
+                    <div class="word" style="color: yellow;">黑</div>
+                    <div class="word" style="color: rgb(118, 82, 249);">綠</div>
+                    <div class="word" style="color: rgb(68, 180, 218);">紅</div>
+                    <div class="word" style="color: rgb(232, 19, 19);">灰</div>
+                    <div class="word" style="color: green;">白</div>
+                    <div class="word" style="color: rgb(68, 180, 218);">黃</div>
+                    <div class="word" style="color: white;">白</div>
+                </div>
+
+                <div class= "display3" >
+                    <div class="word" style="color: rgb(1, 1, 1);">紫</div>
+                    <div class="word" style="color: rgb(0, 255, 68);">白</div>
+                    <div class="word" style="color: rgb(141, 112, 247);">白</div>
+                    <div class="word" style="color: pink;">橘</div>
+                    <div class="word" style="color: rgb(12, 12, 12);">藍</div>
+                    <div class="word" style="color: rgb(110, 245, 112);">紅</div>
+                    <div class="word" style="color: grey;">粉</div>
+                    <div class="word" style="color: rgb(232, 19, 19);">灰</div>
+                    <div class="word" style="color: rgb(8, 190, 251);">綠</div>
+                    <div class="word" style="color: rgb(8, 190, 251);">棕</div>
+                    <div class="word" style="color: white;">白</div>
+                </div>
+
+                <div class= "display4" >
+                    <div class="word" style="color: rgb(68, 180, 218);">綠</div>
+                    <div class="word" style="color: rgb(0, 255, 68);">白</div>
+                    <div class="word" style="color: orange;">黑</div>
+                    <div class="word" style="color: pink;">粉</div>
+                    <div class="word" style="color: black;">藍</div>
+                    <div class="word" style="color: yellow;">灰</div>
+                    <div class="word" style="color: rgb(161, 163, 160);">紅</div>
+                    <div class="word" style="color: rgb(232, 19, 19)">紫</div>
+                    <div class="word" style="color: rgb(5, 5, 5);">棕</div>
+                    <div class="word" style="color: pink;">灰</div>
+                    <div class="word" style="color: white;">白</div>
+                </div>
+                
+                <div class= "display5" >
+                    <div class="word" style="color: rgb(8, 190, 251);">黃</div>
+                    <div class="word" style="color: rgb(0, 255, 68);">綠</div>
+                    <div class="word" style="color: orange;">紅</div>
+                    <div class="word" style="color: pink;">橘</div>
+                    <div class="word" style="color: rgb(12, 12, 12);">藍</div>
+                    <div class="word" style="color: yellow;">黑</div>
+                    <div class="word" style="color: green;">白</div>
+                    <div class="word" style="color: red;">紫</div>
+                    <div class="word" style="color: rgb(8, 190, 251);">綠</div>
+                    <div class="word" style="color: rgb(136, 139, 140);">棕</div>
+                    <div class="word" style="color: white;">白</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    function home(){
+        window.location.href="web.html";}
+    let box;
+    window.onload=function(){
+        box=document.getElementById("box");
+        window.setInterval(scroll,10);
+    };
+    function scroll(){
+        box.scrollTop+=1.5;
+    }
+
+    
+function horse1(){
+   task=document.querySelector(".task");
+   task.innerHTML="請看國字唸出顏色";    
+}
+function horse2(){
+    task=document.querySelector(".task");
+    task.innerHTML="請依照字體顏色唸出來(不管國字)";
+}
+function horse3(){
+    task=document.querySelector(".task");
+    task.innerHTML="請看國字唸出顏色,並在出現紅色時拍手";
+}
+function horse4(){
+    task=document.querySelector(".task");
+    task.innerHTML="請依照字體顏色唸出來(不管國字),並在出現黑色時拍手";
+}
+function reset(){
+    let displays= document.querySelectorAll(".box > div");
+    for(let i=0; i<displays.length; i++){
+        displays[i].style.display="none";
+    }
+
+}
+function display1(){
+    reset();
+    let display1=document.querySelector(".display1");
+    setTimeout(()=>{
+        display1.style.display="block";
+    },10);
+}
+function display2(){
+    reset();
+    let display2=document.querySelector(".display2");
+   setTimeout(()=>{
+        display2.style.display="block";
+    },10);
+}
+function display3(){
+    reset();
+    let display3=document.querySelector(".display3");
+    setTimeout(()=>{
+        display3.style.display="block";
+    },10);
+}
+function display4(){
+    reset();
+    let display4=document.querySelector(".display4");
+    setTimeout(()=>{
+        display4.style.display="block";
+    },10);
+}
+function display5(){
+    reset();
+    let display5=document.querySelector(".display5");
+    setTimeout(()=>{
+        display5.style.display="block";
+    },10);
+}
+</script>
+</body>
+</html>

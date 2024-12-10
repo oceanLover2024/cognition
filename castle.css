@@ -1,0 +1,121 @@
+#combine{
+    display:flex; }
+.home{
+    flex: none;
+    width: 70px;  
+    cursor: pointer;
+}
+.head{
+    flex: none;
+    color: rgb(70, 167, 131);
+    font-size: 40px;font-weight: bold;
+    padding: 10px;
+}
+.taskStyle{
+    font-size: 20px;
+    color: rgb(4, 75, 4);
+    text-align: center;
+    cursor: pointer;
+}
+.hide{
+    display: none;
+}
+.page{
+    display:flex; 
+    align-items: center; justify-content: center;
+    font-size: 16px;            
+}
+@keyframes rotation{
+    from{transform: rotateY(0deg);}
+    to{transform: rotateY(90deg);}
+}
+.boxAnimation{
+    animation-name: rotation;
+    animation-duration: 2s;
+    /*停留在最後的動畫*/
+    animation-fill-mode: forwards;
+}
+.box{
+    font-size: 50px; 
+    text-align: center;
+    width: 80px; height: 80px;
+    background-color: rgb(233, 198, 104);
+    border: solid 2px rgb(122, 71, 6);
+    position: absolute;
+    z-index: 2;
+}
+.box1{
+    top: 150px;
+    left:400px;
+}
+.box2{
+    top: 150px;
+    left:480px;
+}
+.box3{
+    top: 150px;
+    left:560px;
+}
+.box4{
+    top: 150px;
+    left:640px;
+}
+.box5{
+    top: 230px;
+    left:400px;
+}
+.box6{
+    top: 230px;
+    left:480px;
+}
+.box7{
+    top: 230px;
+    left:560px;
+}
+.box8{
+    top: 230px;
+    left:640px;
+}
+.box9{
+    top: 310px;
+    left:400px;
+}
+.box10{
+    top: 310px;
+    left:480px;
+}
+.box11{
+    top: 310px;
+    left:560px;
+}
+.box12{
+    top: 310px;
+    left:640px;
+}
+.box13{
+    top: 390px;
+    left:400px;
+}
+.box14{
+    top: 390px;
+    left:480px;
+}
+.box15{
+    top: 390px;
+    left:560px;
+}
+.box16{
+    top: 390px;
+    left:640px;
+}
+.img{
+    width: 320px; height: 320px;
+    position: absolute;
+    top:150px;
+    left:400px;
+    z-index: 1; 
+    display: none;                    
+}
+.celebrity{
+    display: none;
+}

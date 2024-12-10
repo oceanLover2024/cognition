@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夢幻摩天輪</title>
+    <link rel="stylesheet" type="text/css" href="wheel.css">
+</head>
+<body>
+    <div id="combine">
+        <img onclick="home();" class="home" src="首頁.jpg">  
+        <div class="head">夢幻摩天輪</div>
+    </div>
+    <div class="animalButton">
+        <img class="button" onclick="start(1)" src="wheel/1.jpg"/>
+        <img class="button" onclick="start(2)" src="wheel/2.jpg"/>
+        <img class="button" onclick="start(3)" src="wheel/3.jpg"/>
+        <img class="button" onclick="start(4)" src="wheel/4.jpg"/>
+        <img class="button" onclick="start(5)" src="wheel/5.jpg"/>
+        <img class="button" onclick="start(6)" src="wheel/6.jpg"/>
+        <img class="button" onclick="start(7)" src="wheel/7.jpg"/>
+        <img class="button" onclick="start(8)" src="wheel/8.jpg"/>
+        <img class="button" onclick="start(9)" src="wheel/9.jpg"/>
+        <img class="button" onclick="start(10)" src="wheel/10.jpg"/>
+        <img class="button" onclick="start(11)" src="wheel/11.jpg"/>
+        <img class="button" onclick="start(12)" src="wheel/12.jpg"/>
+        <img class="button" onclick="start(13)" src="wheel/13.jpg"/>
+        <img class="button" onclick="start(14)" src="wheel/14.jpg"/>
+        <img class="button" onclick="start(15)" src="wheel/15.jpg"/>
+    </div>
+    <div class="question">請選一隻動物,並記住摩天輪上
+        <span class="change" onclick="change();">有什麼顏色的車廂,</span>
+        並在摩天輪消失後唸出來~
+    </div>
+    <div class="timer timerStyle">15</div> 
+    <div class="position">       
+    <img class="img show1" src="wheel/color1.jpg"/>
+    <img class="img show2" src="wheel/color2.jpg"/>
+    <img class="img show3" src="wheel/color3.jpg"/>
+    <img class="img show4" src="wheel/numColor1.jpg"/>
+    <img class="img show5" src="wheel/numColor2.jpg"/>
+    <img class="img show6" src="wheel/numColor3.jpg"/>
+    <img class="img show7" src="wheel/fiveAnimal1.jpg"/>
+    <img class="img show8" src="wheel/fiveAnimal2.jpg"/>
+    <img class="img show9" src="wheel/fiveAnimal3.jpg"/>
+    <img class="img show10" src="wheel/sixAnimal1.jpg"/>
+    <img class="img show11" src="wheel/sixAnimal3.jpg"/>
+    <img class="img show12" src="wheel/sixAnimal3.jpg"/>
+    <img class="img show13" src="wheel/eightAnimal1.jpg"/>
+    <img class="img show14" src="wheel/eightAnimal2.jpg"/>
+    <img class="img show15" src="wheel/eightAnimal3.jpg"/>
+     </div>
+    <script>        
+    function home(){
+            window.location.href="web.html";}
+    //切換問題
+    function change(){
+        let change=document.querySelector(".change"); 
+        change.innerHTML="有什麼動物";
+    }
+    //宣告排程並初始化
+    let myInterval=null;
+    //摩天輪動畫
+    function start(number){
+        //抓到計時器,並重置為15
+        let timer=document.querySelector(".timer");
+        timer.innerHTML=15;
+        //抓到要展示出的摩天輪
+        let show= document.querySelector(".show"+number);
+        //先清空其他沒有要展示的摩天輪
+        let allImg= document.querySelectorAll(".img");
+        for(i=0; i<15; i++){
+            allImg[i].style.display="none";
+        }
+        //再展示出要展示的摩天輪
+        show.style.display="block";
+        //避免同時有多個摩天輪在展示
+        if(myInterval!=null)
+        {
+            clearInterval(myInterval);
+        }
+        /*如果目前沒有摩天輪在展示,就跑下面的程式:
+        設定排成讓計時器秒數遞減
+        時間到了清空摩天輪以及排程,重置為初始樣貌*/
+        myInterval=window.setInterval(countdown, 1000);
+        function countdown(){
+            if(timer.innerHTML>0){
+                timer.innerHTML=timer.innerHTML-1;
+            }else{
+              show.style.display="none";  
+              clearInterval(myInterval);  
+              myInterval=null;         
+            }     
+        }
+       
+    }
+
+    </script>
+</body>
+</html> 

@@ -1,0 +1,39 @@
+#combine{
+    display:flex; }
+#flex{
+    flex:none;
+}
+.home{
+    flex: none;
+    width: 70px;  
+    cursor: pointer;
+}
+.head{
+    flex: none;
+    color: rgb(70, 167, 131);
+    font-size: 40px;font-weight: bold;
+    padding: 10px;
+}
+.question{
+    color: rgb(55, 133, 105);
+    font-size: 20px;  
+    padding: 10px; 
+    text-align: center;         
+}
+.task{
+    color: rgb(55, 133, 105);
+    font-size: 30px;  
+    padding: 15px; 
+    text-align: center;
+}
+.box{
+    height: 80px; width: 80px; left:0px;
+    background-color: #ffad3a; 
+    flex:none;
+}
+.pic{
+    width: 70px; height: 70px;
+}
+.plate{
+    width: 100px;
+}

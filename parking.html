@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>碰碰車</title>
+    <link rel="stylesheet" type="text/css" href="parking.css">
+</head>
+
+<body>
+    <div id="combine">
+        <img onclick="home();" class="home" src="首頁.jpg">  
+        <div class="head">碰碰車</div>
+    </div>
+    <div class="outer">
+        <div>
+            <img class="carIcon" onclick="start(0);" src="race/red.jpg"/>
+            <img class="carIcon" onclick="start(1);" src="race/blue.jpg"/>
+            <img class="carIcon" onclick="start(2);" src="race/white.jpg"/>
+            <img class="carIcon" onclick="start(3);" src="race/brown.jpg"/>
+            <img class="carIcon" onclick="start(4);" src="race/pink.jpg"/>
+            <img class="carIcon" onclick="start(5);" src="race/grey.jpg"/>
+            <img class="carIcon" onclick="start(6);" src="race/green.jpg"/>
+            <img class="carIcon" onclick="start(7);" src="race/yellow.jpg"/>
+        </div>
+    </div>
+    <div class="question">請選一台車,記住這台車的<span class="parkingButton" onclick="parking(1);">停車格</span>,記好後就可以出發了!</div>
+    <div class="outer"><img class="parkingStyle parking1 hide" src="race/parking.jpg"/></div>
+    <div class="question">請踩油門(點選車子),將車子開出停車場,在跑道中遇到紅燈請煞車(用"拍手"代替煞車動作)</div>
+    <div class="outer">
+        <div class="circle">
+        <div class="number circleText">20</div>
+        </div>    
+    </div>
+    <div class="question">旅程結束,將車子開回停車場,這台車的<span class="parkingButton" onclick="parking(2);">停車格</span>是?</div>
+    <div class="outer">
+       <img class="parkingStyle parkingEmpty  hide"  src="race/parking.jpg"/>
+       <img class="parkingStyle parking2" src="race/parking0.jpg"/>
+    </div>
+    <script>
+        function home(){
+            window.location.href="web.html";}
+        //控制停車場的照片展現與隱藏
+        function parking(num){
+            let parking=document.querySelector(".parking"+num);
+            parking.classList.toggle("hide");
+            if(num==2){
+               let parkingEmpty=document.querySelector(".parkingEmpty");
+               parkingEmpty.classList.toggle("hide");
+            }
+        }
+        //宣告紅綠燈顏色鎮陣列
+        const colorArray= [
+        ["green","green","yellow","green","yellow","red","yellow","red","red","yellow","red","green","red","yellow","red","green","yellow","red","green","green"],
+        ["yellow","yellow","yellow","green","green","red","yellow","red","green","red","red","green","red","yellow","red","green","yellow","red","yellow","yellow"],
+        ["red","red","green","yellow","red","yellow","yellow","yellow","green","yellow","red","yellow","yellow","red","green","red","yellow","red","red","green"],
+        ["green","red","yellow","yellow","yellow","red","yellow","red","green","green","red","red","green","yellow","red","yellow","red","yellow","green","red"],
+        ["green","green","yellow","red","yellow","red","yellow","red","red","yellow","red","green","red","red","red","green","red","red","green","red"],
+        ["yellow","red","yellow","green","red","green","red","green","red","yellow","yellow","red","green","green","yellow","red","green","yellow","red","green"],
+        ["red","green","red","green","green","red","yellow","red","yellow","yellow","red","yellow","green","yellow","green","green","green","red","red","green"],
+        ["yellow","yellow","yellow","red","yellow","red","green","red","red","yellow","red","green","red","yellow","green","red","yellow","red","yellow","green"],
+        ]
+        //點選車子開始跑紅綠燈
+        function start(num){                      
+            let number=document.querySelector(".number");
+            let circle=document.querySelector(".circle");
+            //重置紅綠燈秒數為20,初始顏色為紅燈
+            number.innerHTML=20;
+            circle.style.backgroundColor="red";
+            //紅綠燈的顏色為陣列中的第幾行,行數由點選的車子帶入數字
+            let selectedColor=colorArray[num];
+            //初始化 顏色從該行的第一個顏色開始跑
+            let colorIndex=0;
+            //設定計時器並宣告變數方便使用
+            let numberInterval=window.setInterval(countDown,1000);
+            let colorInterval=window.setInterval(changeColor,1000);
+            //秒數減一,到0的時候要清除倒數計時器
+            function countDown(){
+               if(number.innerHTML>0){
+                   number.innerHTML-=1;
+                }else{
+                    clearInterval(numberInterval);
+                };
+            }            
+            //巡迴顏色,跑完之後清除計時器
+            function changeColor(){    
+                if(colorIndex<selectedColor.length){ 
+                circle.style.backgroundColor=selectedColor[colorIndex];
+                colorIndex++;
+                }else{
+                    clearInterval(colorInterval);
+                };
+            }
+            
+        }
+    </script>
+</body>
+</html>

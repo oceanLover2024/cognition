@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美式漢堡店</title>
+    <link rel="stylesheet" type="text/css" href="store.css">
+</head>
+<body>
+    <div id="combine">
+        <img onclick="home();" class="home" src="首頁.jpg">  
+        <div class="head">美式漢堡店</div>
+    </div>
+    <div class="task">請連續轉轉盤兩次,用桌上的代幣付總金額,較快且正確的組別獲勝!</div>
+    <img class= "menu" src="store/menu.jpg"/>
+    <img  class= "burgerWheel" src="store/hamburger.jpg"/>  
+    <img class="arrow"  src="store/arror.jpg"/>
+    <button class="startButton" onclick="run();">開始</button>
+    <button class="stopButton" onclick="stop();">暫停</button>
+    <script>
+        function home(){
+            window.location.href="web.html";
+        }
+        //初始化當前的角度為0度
+        let currentAngle=0;
+        //宣告變數(用全域變數,方便在各個函式都可以呼叫)
+        let myinterval;
+        //啟動轉盤
+        function run(){
+            let burgerWheel=document.querySelector(".burgerWheel");
+            myinterval=window.setInterval(go, 50);        
+            function go(){
+                currentAngle+=10;
+                burgerWheel.style.transform=`rotate(${currentAngle}deg)`;
+                }
+            }
+        //停止轉盤,並重置    
+        function stop(){
+            clearInterval(myinterval);
+            myinterval=null;
+        }
+            
+        
+    </script>
+</body>
+</html>

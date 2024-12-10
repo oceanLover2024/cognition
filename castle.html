@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>探險城堡</title>
+    <link rel="stylesheet" type = "text/css" href="castle.css">     
+</head>
+
+<body>
+    <div id="combine">
+        <img onclick="home();" class="home" src="首頁.jpg">  
+        <div class="head">探險城堡</div>
+    </div>  
+    <div class="taskStyle task1 " onclick="changeTask();">歡迎來到探險城堡,這裡有很多珍奇異獸,猜猜看磚塊後方躲著什麼動物?</div>
+    <div class="taskStyle task2 hide" onclick="changeTask();">歡迎來到探險城堡,這裡有很著名歌星,猜猜看磚塊後方是哪位明星?</div>
+   
+    <div class="page">
+        <span onclick= "pre();"><pre><   </pre></span>
+        <span class="pictureNum">1</span>
+        <span onclick="next();"><pre>   ></pre></span>     
+    </div>
+
+    <div class="box box1" onclick="rotate(1);">1</div>
+    <div class="box box2" onclick="rotate(2);">2</div>
+    <div class="box box3" onclick="rotate(3);">3</div>
+    <div class="box box4" onclick="rotate(4);">4</div>
+    <div class="box box5" onclick="rotate(5);">5</div>
+    <div class="box box6" onclick="rotate(6);">6</div>
+    <div class="box box7" onclick="rotate(7);">7</div>
+    <div class="box box8" onclick="rotate(8);">8</div>
+    <div class="box box9" onclick="rotate(9);">9</div>
+    <div class="box box10" onclick="rotate(10);">10</div>
+    <div class="box box11" onclick="rotate(11);">11</div>
+    <div class="box box12" onclick="rotate(12);">12</div>
+    <div class="box box13" onclick="rotate(13);">13</div>
+    <div class="box box14" onclick="rotate(14);">14</div>
+    <div class="box box15" onclick="rotate(15);">15</div>
+    <div class="box box16" onclick="rotate(16);">16</div>
+    
+    <div class="animal">
+    <img class="img img1" style="display: block;" src="castle/animal/獅子.jpg"/>
+    <img class="img img2" src="castle/animal/鹿.jpg"/>
+    <img class="img img3" src="castle/animal/水獺.jpg"/>
+    <img class="img img4" src="castle/animal/水豚.jpg"/>
+    <img class="img img5" src="castle/animal/犀牛.jpg"/>
+    <img class="img img6" src="castle/animal/浣熊.jpg"/>
+    <img class="img img7" src="castle/animal/狐狸.jpeg"/>
+    <img class="img img8" src="castle/animal/狐蒙.jpg"/>
+    <img class="img img9" src="castle/animal/狗.jpg"/>
+    <img class="img img10" src="castle/animal/穿山甲.jpg"/>
+    <img class="img img11" src="castle/animal/羊駝.jpg"/>
+    <img class="img img12" src="castle/animal/貓.jpg"/>
+    <img class="img img13" src="castle/animal/馬來謨.png"/>
+    <img class="img img14" src="castle/animal/蜥蜴.jpg">
+    <img class="img img15" src="castle/animal/無尾熊.jpg"/>
+    <img class="img img16" src="castle/animal/松鼠.jpg"/>
+    </div>
+
+    <div class="celebrity">
+    <img class="img img1" style="display: block;" src="castle/celebrity/周杰倫.jpg"/>
+    <img class="img img2" src="castle/celebrity/五月天.jpg"/>
+    <img class="img img3" src="castle/celebrity/伍佰.jpg"/>
+    <img class="img img4" src="castle/celebrity/張震嶽.jpg"/>
+    <img class="img img5" src="castle/celebrity/劉德華.jpg"/>
+    <img class="img img6" src="castle/celebrity/楊丞琳.jpg"/>
+    <img class="img img7" src="castle/celebrity/張學友.jpg"/>
+    <img class="img img8" src="castle/celebrity/動力火車.jpg"/>
+    <img class="img img9" src="castle/celebrity/張惠妹.jpg"/>
+    <img class="img img10" src="castle/celebrity/田馥甄.jpg"/>
+    <img class="img img11" src="castle/celebrity/張雨生.jpg"/>
+    <img class="img img12" src="castle/celebrity/梁靜茹.jpg"/>
+    <img class="img img13" src="castle/celebrity/林憶蓮.jpg"/>
+    <img class="img img14" src="castle/celebrity/葉啟田.jpg">
+    <img class="img img15" src="castle/celebrity/蕭敬騰.jpg"/>
+    <img class="img img16" src="castle/celebrity/鄧麗君.jpg"/>
+    </div>
+    
+    <script>
+        function home(){
+            window.location.href="web.html";}
+
+        //預設動物照片先展示
+        let currentTask="animal";
+
+        //初始化方塊,把打開的方塊蓋回來(移除翻轉動畫)
+        function resetBox(){           
+            for(i= 1 ;i<= 16; i++){
+                let box= document.querySelector(".box"+ i);
+                box.classList.remove("boxAnimation");
+            }
+        }
+        //切換動物照片或藝人照片,再展示出頁面指定的那張照片
+        function changeImg(){
+            let pictureNum=document.querySelector(".pictureNum").innerHTML;
+            let imgs;
+            //抓取照片(動物類別或是藝人類別)
+            if (currentTask === 'animal') {
+                imgs = document.querySelectorAll(".animal .img");
+            } else if (currentTask === 'celebrity') {
+                imgs = document.querySelectorAll(".celebrity .img");
+            }
+            //先初始化,清空照片
+            for(i= 0; i< 16; i++){
+                imgs[i].style.display= "none";
+            }
+            //再把頁數指定的照片,當成"當前的照片"印出
+            let currentImg= imgs[pictureNum-1];
+            currentImg.style.display = "block";            
+        }
+        //切換任務內容,使之切換後會讓頁面回到第一張,重置方塊,並切換照片類別(動物/藝人)
+        function changeTask(){           
+            let task1= document.querySelector(".task1");
+            let task2= document.querySelector(".task2");
+            let animal= document.querySelector(".animal");
+            let celebrity= document.querySelector(".celebrity");
+            //切換任務
+            task1.classList.toggle("hide");
+            task2.classList.toggle("hide");
+            //切換任務時讓頁碼回到第一張,方塊蓋回來,照片展示回到第一張,
+            document.querySelector(".pictureNum").innerHTML=1;
+            resetBox();
+            
+            //依照任務切換動物照片或藝人照片
+            if(task1.classList.contains("hide")){
+                currentTask="celebrity";
+                animal.style.display="none";
+                celebrity.style.display="block";
+            }else{
+                currentTask="animal";
+                animal.style.display="block";
+                celebrity.style.display="none";  
+            }
+            changeImg();
+        }
+        //依照使用者點選的方塊 翻轉方塊
+        function rotate(num){
+            let box=document.querySelector(".box"+num);
+            box.classList.add("boxAnimation");
+        }        
+        //上一頁
+        function pre(){
+            let pictureNum=document.querySelector(".pictureNum");
+            if (pictureNum.innerHTML>1){
+            pictureNum.innerHTML=Number(pictureNum.innerHTML)-1;
+            }
+            resetBox();
+            changeImg();      
+        }
+        
+        //下一頁
+        function next(){
+            let pictureNum=document.querySelector(".pictureNum"); 
+            if (pictureNum.innerHTML<16){
+            pictureNum.innerHTML=Number(pictureNum.innerHTML)+1;
+            }
+            resetBox();
+            changeImg();
+        }
+
+    </script>
+</body>
+</html>

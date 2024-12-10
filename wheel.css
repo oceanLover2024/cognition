@@ -1,0 +1,57 @@
+#combine{
+    display: flex;
+}
+.home{
+    flex: none;
+    width: 70px;  
+    cursor: pointer;
+}
+.head{
+    flex: none;
+    color: rgb(70, 167, 131);
+    font-size: 40px;font-weight: bold;
+    padding: 10px;
+}
+.animalButton{
+    text-align: center;
+}
+.button{
+    width: 30px; height: 30px;
+    margin:10px;
+    cursor: pointer;                               
+}
+.question{
+    color: rgb(31, 121, 88);
+    font-size: 20px;
+    margin: 10px;
+    text-align: center;
+}
+.change{
+    text-decoration: underline;
+}
+.timerStyle{
+    font-size: 30px; font-weight: bold;
+    color:aliceblue;
+    padding:10px;
+    text-align: center;
+    width: 40px;height: 40px; 
+    background-color: rgba(231, 36, 36, 0.858);           
+    border-radius: 50%;
+}
+.position{
+    display:flex;
+    justify-content: center;            
+}
+.img{
+    width: 250px;
+    animation: rotate 15s linear ;
+    display: none;
+}
+@keyframes rotate{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}       

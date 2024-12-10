@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刺激雲霄飛車</title>
+    <link rel="stylesheet" type = "text/css" href="car.css">
+</head>
+<body>
+<div id="combine">
+    <img onclick="home();" class="home" src="首頁.jpg">  
+    <div class="head">刺激雲霄飛車</div>
+</div>
+    <div class="question">請選一個車牌,並在雲霄飛車駛離軌道前,完成任務!</div>  
+    <div >
+        <img class="plate plate1" onclick="one();" src="plate/lan01.jpg"/>
+        <img class="plate plate2"  onclick="two();" src="plate/lan02.jpg"/>
+        <img class="plate plate3" onclick="three();" src="plate/lan03.jpg"/>
+        <img class="plate plate4" onclick="four();" src="plate/lan04.jpg"/>
+        <img class="plate plate5" onclick="five();" src="plate/lan05.jpg"/>
+        <img class="plate plate6" onclick="six();" src="plate/lan06.jpg"/>
+        <img class="plate plate7" onclick="seven();" src="plate/lan07.jpg"/>
+        <img class="plate plate8" onclick="eight();" src="plate/lan08.jpg"/>
+        <img class="plate plate9" onclick="nine();" src="plate/lan09.jpg"/>
+        <img class="plate plate10" onclick="ten();" src="plate/lan10.jpg"/>
+               
+        <img class="plate plate21" onclick="one2();" src="plate/log01.jpg"/>
+        <img class="plate plate22" onclick="two2();" src="plate/log02.jpg"/>
+        <img class="plate plate23" onclick="three2();" src="plate/log03.jpg"/>
+        <img class="plate plate24" onclick="four2();" src="plate/log04.jpg"/>
+        <img class="plate plate25" onclick="five2();" src="plate/log05.jpg"/>
+        <img class="plate plate26" onclick="six2();" src="plate/log06.jpg"/>
+        <img class="plate plate27" onclick="seven2();" src="plate/log07.jpg"/>
+        <img class="plate plate28" onclick="eight2();" src="plate/log08.jpg"/>
+    </div>
+    
+    <div id="task"class="task">任務將會出現在此!</div>
+
+    <div id="combine">
+        <div class="box" id="box" onclick="run();"></div>
+        <div id="flex"><img class="pic" src="plate/car.jpg"/></div>   
+    </div>
+      
+  
+  <script>
+    //let box=document.querySelector(".box");
+    //let task=document.querySelector(".task");
+    function home(){
+        window.location.href="web.html";
+    }
+//讓時間條回到初始的函式
+    function renew(){
+        box.style.width=80+"px";       
+    }
+//按下按鈕跑出任務,並且讓按鈕變透明
+    function one(){
+        renew();
+        task.innerHTML="請想出包含注音'ㄒㄒ'(兩個字)的詞語,越多越好~";
+        let plate1=document.querySelector(".plate1");
+        plate1.style.opacity=0.3;      
+    }
+    function two(){
+        renew();
+        task.innerHTML="請想出包含注音'ㄅㄅ'(兩個字)的詞語,越多越好~";
+        let plate2=document.querySelector(".plate2");
+        plate2.style.opacity=0.3;
+    }
+    function three(){
+        renew();
+        task.innerHTML="請想出包含注音'ㄏㄏ'(兩個字)的詞語,越多越好~";
+        let plate3=document.querySelector(".plate3");
+        plate3.style.opacity=0.3;
+    }
+    function four(){
+        renew(); 
+        task.innerHTML="請想出包含注音'ㄆㄆ'(兩個字)的詞語,越多越好~";
+        let plate4=document.querySelector(".plate4");
+        plate4.style.opacity=0.3;
+    }
+    function five(){
+        renew();
+        task.innerHTML="請想出包含注音'ㄊㄈ'(兩個字)的詞語,越多越好~";
+        let plate5=document.querySelector(".plate5");
+        plate5.style.opacity=0.3;
+    }
+    function six(){
+        renew();
+    task.innerHTML="請想出包含'兩種動物'的成語,越多越好~";
+        let plate6=document.querySelector(".plate6");
+        plate6.style.opacity=0.3;
+    }
+    function seven(){
+        renew();
+        task.innerHTML="請想出包含'季節'的成語,越多越好~";
+        let plate7=document.querySelector(".plate7");
+        plate7.style.opacity=0.3;
+    }
+    function eight(){
+        renew();
+        task.innerHTML="請想出包含'一種動物'的成語,越多越好~";
+        let plate8=document.querySelector(".plate8");
+        plate8.style.opacity=0.3;
+    }
+    function nine(){
+        renew();
+        task.innerHTML="請想出包含'顏色'的成語,越多越好~";
+        let plate9=document.querySelector(".plate9");
+        plate9.style.opacity=0.3;
+    }
+    function ten(){
+        renew();
+        task.innerHTML="請想出'包含數字'的成語,越多越好~";
+        let plate10=document.querySelector(".plate10");
+        plate10.style.opacity=0.3;
+    }
+
+    function one2(){
+        renew();
+        task.innerHTML="是2的倍數,而且也是3的倍數";
+        let plate21=document.querySelector(".plate21");
+        plate21.style.opacity=0.3;
+    }
+    function two2(){
+        renew();
+        task.innerHTML="是2的倍數,但不是3的倍數";
+        let plate22=document.querySelector(".plate22");
+        plate22.style.opacity=0.3; 
+    }
+    function three2(){
+        renew();
+        task.innerHTML="是4的倍數或是7的倍數";
+        let plate23=document.querySelector(".plate23");
+        plate23.style.opacity=0.3; 
+    }
+    function four2(){
+        renew();
+        task.innerHTML="9的倍數";
+        let plate24=document.querySelector(".plate24");
+        plate24.style.opacity=0.3; 
+    }  
+    function five2(){
+        renew(); 
+        task.innerHTML="100連續減7";
+        let plate25=document.querySelector(".plate25");
+        plate25.style.opacity=0.3; 
+    } 
+    function six2(){
+        renew();
+        task.innerHTML="50連續加7";
+        let plate26=document.querySelector(".plate26");
+        plate26.style.opacity=0.3; 
+    }      
+    function seven2(){
+        renew();
+        task.innerHTML="3連續乘2";
+        let plate27=document.querySelector(".plate27");
+        plate27.style.opacity=0.3; 
+    }  
+    function eight2(){
+        renew();
+        task.innerHTML="2連續加9";
+        let plate24=document.querySelector(".plate28");
+        plate24.style.opacity=0.3; 
+    } 
+//執行時間條的函式      
+    function run(){
+        let style=window.getComputedStyle(box);
+        let size=style.getPropertyValue("width");
+        size=parseInt(size);
+        
+        let animation=window.setInterval(function(){            
+                if(size>window.screen.width){
+                 window.clearInterval("animation");
+                return;
+                }                
+            size+=1;
+            box.style.width=size+"px";
+        },20);
+    }
+    
+
+    
+  </script> 
+</body>
+</html>

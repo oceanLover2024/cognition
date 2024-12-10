@@ -1,0 +1,30 @@
+a{
+    color: rgb(4, 73, 4);
+    text-decoration: none;
+}
+
+li{
+color: rgb(4, 73, 4);
+}
+
+h3{
+    background-color: rgb(167, 236, 184);
+     margin: 0px; padding: 10px;
+}
+
+ul{
+    float:left;
+    background-color: rgb(228, 242, 228);
+    border-radius: 5px; 
+    margin-top: 5px; padding: 20px;
+}
+.title{
+    width: 350px;
+}
+
+.map{
+    width: 600px;
+    margin: 5px; border-radius: 5px;
+}
+
+

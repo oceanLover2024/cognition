@@ -1,0 +1,84 @@
+#combine{
+    display:flex; 
+}
+.home{
+    flex: none;
+    width: 70px;  
+    cursor: pointer;
+}
+.head{
+    flex: none;
+    color: rgb(70, 167, 131);
+    font-size: 40px;font-weight: bold;
+    padding: 10px;
+}
+.main{
+    display: flex;
+    flex-wrap: wrap;
+}
+.horsesBlock{
+    flex: none;
+    width: 100%;
+    text-align: center;
+}
+.horse{
+    width: 50px;
+    cursor:pointer
+}
+.questions{
+    flex: none;
+    width: 100%;
+    text-align: center;
+}
+
+.buttonsBlock{
+    flex: none;
+    width: 100%;
+    text-align: center;
+}
+.buttonStyle{
+    margin: 8px; font-size: 25px;
+    background-color: rgb(187, 216, 191);
+    border-color: rgb(202, 210, 205);
+    border-radius: 5px;
+    cursor:pointer;           
+}
+.question{
+    color: rgb(55, 133, 105);
+    font-size: 20px;  
+    padding: 10px; 
+    text-align: center;
+}
+.boxesBlock{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.box{
+    flex:none; 
+    width: 250px;height: 200px;
+    border: 2px solid cadetblue;
+    overflow: hidden;
+}
+
+.display1{
+    display: none;
+}
+.display2{
+    display: none;
+}
+.display3{
+    display: none;
+}
+.display4{
+    display: none;
+}
+.display5{
+    display: none;
+}
+
+
+.word{
+    font-size: 200px; text-align: center;            
+}
